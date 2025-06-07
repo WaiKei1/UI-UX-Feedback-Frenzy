@@ -1,1 +1,1 @@
-# UI-UX-Feedback-Frenzy
+# UI/UX-Feedback-Frenzy
