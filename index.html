@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UIUX Feedback Frenzy</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>✨ UIUX Feedback Frenzy ✨</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UIUX Feedback Frenzy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>✨ UIUX Feedback Frenzy ✨</h1>
 
-  <div class="upload-container">
-    <input type="file" id="upload" accept="image/*" />
-    <br />
-    <img id="preview" />
-  </div>
+      <div class="card">
+        <h2>Upload Your Design</h2>
+        <label for="upload" class="custom-upload-btn">Choose File</label>
+        <input type="file" id="upload" accept="image/*" />
+        <img id="preview" />
+        <button id="confirmBtn" disabled>Confirm Upload</button>
+      </div>
 
-  <div class="feedback-buttons">
-    <button class="roast" onclick="giveFeedback('roast')">Roast Me 🔥</button>
-    <button class="cute" onclick="giveFeedback('cute')">Make It Cute 🍭</button>
-    <button class="helpful" onclick="giveFeedback('helpful')">Be Helpful 🧠</button>
-  </div>
+      <div class="card">
+        <h2>Choose Your Feedback</h2>
+        <div class="feedback-buttons">
+          <button class="roast" id="roastBtn">Roast Me 🔥</button>
+          <button class="cute" id="cuteBtn">Make It Cute 🍭</button>
+          <button class="helpful" id="helpfulBtn">Be Helpful 🧠</button>
+        </div>
 
-  <div class="feedback-section">
-    <div class="bubble" id="feedbackBubble">Choose your feedback style above!</div>
-    <div class="face" id="feedbackFace">🙂</div>
-  </div>
+        <div class="feedback-section">
+          <div class="bubble" id="feedbackBubble">
+            Choose your feedback style above!
+          </div>
+          <div class="face" id="feedbackFace">🤓</div>
+          <div id="emoji-rain"></div>
+        </div>
+      </div>
 
-  <script src="script.js"></script>
-</body>
+      <div class="card">
+        <h2>Do You Want to Give Others Feedback?</h2>
+        <button id="toggleViewBtn">View Designs</button>
+
+        <div id="communityFeed" class="hidden">
+          <div><img id="communityDesign" src="" alt="Community Design" /></div>
+          <div id="labelTag" class="label-tag general">[GENERAL]</div>
+        </div>
+        <div class="input-area" id="inputArea">
+          <input
+            type="text"
+            id="userFeedbackInput"
+            placeholder="Type your feedback here..."
+          />
+          <button id="sendFeedbackBtn">Send</button>
+        </div>
+
+        <div id="feedbackList" class="feedback-list"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
