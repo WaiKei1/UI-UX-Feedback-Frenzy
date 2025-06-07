@@ -1,22 +1,61 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #fffbe6;
+  margin: 0;
+  padding: 20px;
   text-align: center;
-  background-color: #fdf6e3;
-  padding: 2rem;
 }
 
-#output {
-  margin-top: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.upload-container {
+  margin: 20px auto;
+}
+
+.feedback-buttons button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.roast { background-color: #ff6f61; color: white; }
+.cute { background-color: #ffb6c1; color: white; }
+.helpful { background-color: #6acfc7; color: white; }
+
+.feedback-section {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.bubble {
+  background-color: #fff;
+  padding: 12px 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  display: inline-block;
+  min-width: 250px;
   text-align: left;
+  font-size: 1rem;
 }
 
-.feedback-msg {
-  background-color: #fff3cd;
-  border-left: 5px solid #ff9800;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+.face {
+  font-size: 2rem;
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }

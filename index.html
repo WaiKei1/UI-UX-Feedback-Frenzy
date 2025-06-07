@@ -7,18 +7,24 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎯 Feedback Frenzy</h1>
+  <h1>✨ UIUX Feedback Frenzy ✨</h1>
 
-  <label for="tone">Choose Feedback Style:</label>
-  <select id="tone">
-    <option value="roast">🔥 Roast</option>
-    <option value="cute">💖 Cute</option>
-    <option value="helpful">🧠 Constructive</option>
-  </select>
+  <div class="upload-container">
+    <input type="file" id="upload" accept="image/*" />
+    <br />
+    <img id="preview" />
+  </div>
 
-  <button onclick="generateFeedback()">Get Feedback</button>
+  <div class="feedback-buttons">
+    <button class="roast" onclick="giveFeedback('roast')">Roast Me 🔥</button>
+    <button class="cute" onclick="giveFeedback('cute')">Make It Cute 🍭</button>
+    <button class="helpful" onclick="giveFeedback('helpful')">Be Helpful 🧠</button>
+  </div>
 
-  <div id="output"></div>
+  <div class="feedback-section">
+    <div class="bubble" id="feedbackBubble">Choose your feedback style above!</div>
+    <div class="face" id="feedbackFace">🙂</div>
+  </div>
 
   <script src="script.js"></script>
 </body>

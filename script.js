@@ -1,32 +1,48 @@
-const feedbackMessages = {
-  roast: [
-    "Wow. Helvetica again? Bold move.",
-    "This looks like it came straight out of 2011.",
-    "Even Comic Sans would be jealous."
-  ],
-  cute: [
-    "Awww this is adorable! Love the round corners 💕",
-    "Such a friendly design! Makes me wanna hug my screen.",
-    "This UI is a ray of sunshine ☀️"
-  ],
-  helpful: [
-    "Consider increasing contrast for better readability.",
-    "Spacing could help group related items better.",
-    "Try aligning buttons to reduce visual noise."
-  ]
+const roastFeedbacks = [
+  "Is that Comic Sans? Bold choice.",
+  "Your button looks like it's hiding from users.",
+  "UX stands for 'Unintended X-perience'?"
+];
+
+const cuteFeedbacks = [
+  "Awww your UI is like a baby duckling! 🐣",
+  "Such round corners! I wanna hug it!",
+  "Sooo adorable it makes me wanna squeal 💖"
+];
+
+const helpfulFeedbacks = [
+  "Consider more padding around your text.",
+  "Try aligning that button with your form field.",
+  "Think about adding hover states for better UX."
+];
+
+const faces = {
+  roast: "😈",
+  cute: "🥺",
+  helpful: "🤓"
 };
 
-function generateFeedback() {
-  const tone = document.getElementById('tone').value;
-  const output = document.getElementById('output');
-  output.innerHTML = ''; // Clear previous
+function giveFeedback(type) {
+  const feedbackEl = document.getElementById("feedbackBubble");
+  const faceEl = document.getElementById("feedbackFace");
+  feedbackEl.innerText = "Typing...";
+  faceEl.innerText = faces[type];
 
-  feedbackMessages[tone].forEach((msg, i) => {
-    setTimeout(() => {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = 'feedback-msg';
-      msgDiv.innerText = msg;
-      output.appendChild(msgDiv);
-    }, i * 1500);
-  });
+  setTimeout(() => {
+    let feedback;
+    if (type === "roast") {
+      feedback = roastFeedbacks[Math.floor(Math.random() * roastFeedbacks.length)];
+    } else if (type === "cute") {
+      feedback = cuteFeedbacks[Math.floor(Math.random() * cuteFeedbacks.length)];
+    } else {
+      feedback = helpfulFeedbacks[Math.floor(Math.random() * helpfulFeedbacks.length)];
+    }
+    feedbackEl.innerText = feedback;
+  }, 1000);
 }
+
+document.getElementById("upload").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById("preview");
+  preview.src = URL.createObjectURL(file);
+});
